@@ -1,0 +1,1 @@
+Las empresas invierten millones en firewalls, cifrado y dispositivos para acceder de forma segura, y es dinero malgastado, porque ninguna de estas medidas corrige el eslabón más débil de la cadena de seguridad: la gente que usa y administra los ordenadores.
