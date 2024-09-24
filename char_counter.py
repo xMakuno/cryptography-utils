@@ -1,4 +1,4 @@
-phrase = input("Enter the phrase to count its characters")
+phrase = input("Enter the phrase to count its characters:\n")
 characters = 0
 for c in phrase:
     banned_chars = " ,;.!:"
