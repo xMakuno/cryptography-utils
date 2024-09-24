@@ -1,5 +1,5 @@
 def checkAscii(c):
-    banned_chars = " ,;.!:"
+    banned_chars = " ,;.!:\""
     if c not in banned_chars:
         return True
     else:
@@ -23,20 +23,31 @@ alphabet = "abcdefghijklmnñopqrstuvwxyz"
 # print(alphabet[13])
 shift = int(input("Enter shift amount:\n"))
 r_shift = shift % len(alphabet)
+r_sol =  alphabet[r_shift:] + alphabet[:r_shift]
 # print(f"Right shift is: {r_shift}")
 l_shift = -shift % len(alphabet)
-# print(f"Left shift is: {l_shift}")
-r_sol =  alphabet[r_shift:] + alphabet[:r_shift]
 l_sol =  alphabet[l_shift:] + alphabet[:l_shift]
-print("These are the guides to ceaser:\n")
-print(alphabet)
-print(r_sol)
+# print(f"Left shift is: {l_shift}")
+# print(l_sol)
 
 option = input("Do you to (C)ipher or (D)ecipher? Default is cipher\n")
 option = option.upper()
 while option != 'D' and option != 'C':
     option = input("Do you to (C)ipher or (D)ecipher? Default is cipher\n")
     option = option.upper()
+
+sol_option = input("Doy you want to use (R)ight or (L)eft shift?\n")
+sol_option.upper()
+while sol_option != 'L' and sol_option != 'R':
+    sol_option = input("Doy you want to use (R)ight or (L)eft shift?\n")
+    sol_option = sol_option.upper()
+
+print("Cipher guide")
+print(alphabet)
+if sol_option == 'L':
+    print(r_sol)
+elif sol_option == 'R':
+    print(l_sol)
 
 if option == 'D':
     msg = input("Enter the message you want to decipher:\n")
