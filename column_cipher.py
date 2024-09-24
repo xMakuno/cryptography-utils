@@ -6,7 +6,7 @@ def checkAscii(c):
         return False
     
 if __name__ == "__main__":
-    msg = input()
+    msg = input("Enter the phrase to cipher: ")
     temp = ""
     for c in msg:
         if checkAscii(c):
