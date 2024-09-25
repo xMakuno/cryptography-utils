@@ -42,11 +42,14 @@ while sol_option != 'L' and sol_option != 'R':
     sol_option = input("Doy you want to use (R)ight or (L)eft shift?\n")
     sol_option = sol_option.upper()
 
-print("Cipher guide")
+print("Cipher guide:")
 print(alphabet)
+guide = ""
 if sol_option == 'L':
+    guide = l_sol
     print(r_sol)
 elif sol_option == 'R':
+    guide = r_sol
     print(l_sol)
 
 if option == 'D':
@@ -54,8 +57,9 @@ if option == 'D':
     msg = msg.lower()
     decipher_msg = ""
     for c in msg:
+        c = parseTildes(c)
         if checkAscii(c):
-            decipher_msg = decipher_msg + alphabet[r_sol.index(c)]
+            decipher_msg = decipher_msg + alphabet[guide.index(c)]
         else:
             decipher_msg = decipher_msg + c
     print(decipher_msg)
@@ -66,7 +70,7 @@ elif option == 'C':
     for c in msg:
         c = parseTildes(c)
         if checkAscii(c):
-            cipher_msg = cipher_msg + alphabet[r_sol.index(c)]
+            cipher_msg = cipher_msg + alphabet[guide.index(c)]
         else:
             cipher_msg = cipher_msg + c
     print(cipher_msg)
